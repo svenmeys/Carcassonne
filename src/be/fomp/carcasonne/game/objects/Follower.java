@@ -1,5 +1,5 @@
 package be.fomp.carcasonne.game.objects;
 
-public interface Follower {
+public interface Follower extends GameObject{
 	Player getOwner();
 }
