@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deck xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="deck.xsd">
+  <tile id="0" ammount="1">
+    <city>0,1,2</city>
+    <field>3,11</field>
+    <road>4,10,12</road>
+    <field>5,6,7,8,9</field>
+  </tile>
+  <tile id="1" ammount="4">
+    <cloister>12</cloister>
+    <field>0,1,2,3,4,5,6,7,8,9,10,11</field>
+  </tile>
+  <tile id="2" ammount="2">
+    <cloister>12</cloister>
+    <road>7</road>
+    <field>0,1,2,3,4,5,6,8,9,10,11</field>
+  </tile> 
+  <tile id="3" ammount="1">
+    <city2>0,1,2,3,4,5,6,7,8,9,10,11,12</city2>
+  </tile>
+  <tile id="4" ammount="3">
+    <city>0,1,2,3,4,5,9,10,11,12</city>
+    <field>6,7,8</field>
+  </tile>
+  <tile id="5" ammount="1">
+    <city2>0,1,2,3,4,5,9,10,11,12</city2>
+    <field>6,7,8</field>
+  </tile>
+  <tile id="6" ammount="1">
+    <city>0,1,2,3,4,5,9,10,11,12</city>
+    <field>6</field>
+    <field>8</field>
+    <road>7</road>
+  </tile>
+  <tile id="7" ammount="2">
+    <city2>0,1,2,3,4,5,9,10,11,12</city2>
+    <field>6</field>
+    <field>8</field>
+    <road>7</road>
+  </tile>
+  <tile id="8" ammount="3">
+    <city>0,1,2,9,10,11</city>
+    <field>3,4,5,6,7,8,12</field>
+  </tile>
+  <tile id="9" ammount="2">
+    <city2>0,1,2,9,10,11</city2>
+    <field>3,4,5,6,7,8,12</field>
+  </tile>
+  <tile id="10" ammount="3">
+    <city>0,1,2,9,10,11</city>
+    <field>3,12,8</field>
+    <field>5,6</field>
+    <road>4,7</road>
+  </tile>
+  <tile id="11" ammount="2">
+    <city2>0,1,2,9,10,11</city2>
+    <field>3,12,8</field>
+    <field>5,6</field>
+    <road>4,7</road>
+  </tile>
+  <tile id="12" ammount="1">
+    <field>0,1,2</field>
+    <field>6,7,8</field>
+    <city>3,4,5,9,10,11,12</city>
+  </tile>
+  <tile id="13" ammount="2">
+    <field>0,1,2</field>
+    <field>6,7,8</field>
+    <city2>3,4,5,9,10,11,12</city2>
+  </tile>
+  <tile id="14" ammount="2">
+    <field>3,4,5,6,7,8,12</field>
+    <city>0,1,2</city>
+    <city>9,10,11</city>
+  </tile>
+  <tile id="15" ammount="3">
+    <field>3,4,5,9,10,11,12</field>
+    <city>0,1,2</city>
+    <city>6,7,8</city>
+  </tile>
+  <tile id="16" ammount="5">
+    <city>0,1,2</city>
+    <field>3,4,5,6,7,8,9,10,11,12</field>
+  </tile>
+  <tile id="17" ammount="3">
+    <city>0,1,2</city>
+    <field>3,4,5,6,11,12</field>
+    <field>8,9</field>
+    <road>7,10</road>
+  </tile>
+  <tile id="18" ammount="3">
+    <city>0,1,2</city>
+    <field>3,8,9,10,11</field>
+    <field>5,6</field>
+    <road>4,7</road>
+  </tile>
+  <tile id="19" ammount="3">
+    <city>0,1,2</city>
+    <field>3,11</field>
+    <road>4</road>
+    <field>5,6</field>
+    <road>7</road>
+    <field>8,9</field>
+    <road>10</road>
+    <crossing>12</crossing>
+  </tile>
+  <tile id="20" ammount="3">
+    <city>0,1,2</city>
+    <field>3,11</field>
+    <road>4,12,10</road>
+    <field>5,6,7,8,9</field>
+  </tile>
+  <tile id="21" ammount="8">
+    <road>1,7,12</road>
+    <field>0,8,9,10,11</field>
+    <field>2,3,4,5,6</field>
+  </tile>
+  <tile id="22" ammount="9">
+    <field>0,1,2,3,4,5,6,11</field>
+    <road>7,10,12</road>
+    <field>8,9</field>
+  </tile>
+  <tile id="23" ammount="4">
+    <field>0,1,2,3,11</field>
+    <road>4</road>
+    <field>5,6</field>
+    <road>7</road>
+    <field>8,9</field>
+    <road>10</road>
+    <crossing>12</crossing>
+  </tile>
+  <tile id="24" ammount="1">
+   <road>1</road>
+   <road>4</road>
+   <road>7</road>
+   <road>10</road>
+   <crossing>12</crossing>
+   <field>0,11</field>
+   <field>2,3</field>
+   <field>5,6</field>
+   <field>8,9</field>
+  </tile>
+</deck>

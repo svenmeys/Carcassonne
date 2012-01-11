@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+   <element name="deck">
+	    <complexType>
+	    	<sequence maxOccurs="unbounded" minOccurs="0">
+	    		<element name="tile">
+	    		  <complexType>
+	    		  	<choice maxOccurs="unbounded">
+	    		  		<element name="field" type="string" />
+	    		  		<element name="cloister" type="string" />
+	    		  		<element name="road" type="string" />
+	    		  		<element name="city" type="string" />
+	    		  		<element name="city2" type="string" />
+	    		  		<element name="crossing" type="string" />
+	    		  	</choice>
+	    		  	<attribute name="id" type="int"/>
+	    		  	<attribute name="ammount" type="int"/>
+	    		  </complexType>
+	    		</element>
+	    	</sequence>
+	    </complexType>
+    </element>
+</schema>
