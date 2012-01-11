@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Carcasonne" basedir="." default="main">
+<project name="Carcassonne" basedir="." default="main">
 
 	<property name="src.dir" value="src" />
 	<property name="lib.dir" value="lib" />
 	<property name="build.dir" value="build" />
+	<property name="data.dir" value="data" />
 	<property name="classes.dir" value="${build.dir}/classes" />
 	<property name="jar.dir" value="${build.dir}/jar" />
 
-	<property name="main-class" value="Carcasonne" />
+	<property name="main-class" value="be.fomp.carcassonne.Carcassonne" />
 
 	<path id="classpath">
 		<fileset dir="${lib.dir}" includes="**/*.jar" />
+		<fileset dir="." includes="${data.dir}/**" />
 	</path>
-	
 	<path id="application" location="${jar.dir}/${ant.project.name}.jar" />
-	
+
+
 	<target name="clean">
 		<delete dir="${build.dir}" />
 	</target>
 
-	<target name="compile">
+	<target name="compile" depends="clean">
 		<mkdir dir="${classes.dir}" />
 		<javac srcdir="${src.dir}" destdir="${classes.dir}"
 			classpathref="classpath" />
@@ -31,6 +33,7 @@
 			<manifest>
 				<attribute name="Main-Class" value="${main-class}" />
 			</manifest>
+			<fileset dir="." includes="${data.dir}/**" />
 		</jar>
 	</target>
 
