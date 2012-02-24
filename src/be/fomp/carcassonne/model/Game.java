@@ -55,6 +55,12 @@ public interface Game extends Observable, Beanable<GameBean> {
 	int getRound();
 	
 	/**
+	 * 
+	 * @return the zooming scale of the game map
+	 */
+	double getScale();
+	
+	/**
 	 * @param name the name of the game
 	 */
 	void setName(String name);
@@ -94,4 +100,9 @@ public interface Game extends Observable, Beanable<GameBean> {
 	 * @param round the game round
 	 */
 	void setRound(int round);
+	
+	/**
+	 * @param scale the zoom percentage of the map
+	 */
+	void setScale(double scale);
 }

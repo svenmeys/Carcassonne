@@ -16,6 +16,11 @@ import be.fomp.carcassonne.model.GameBean;
 import be.fomp.carcassonne.utils.Ruleset;
 import be.fomp.carcassonne.view.GameView;
 
+/**
+ * Represents the game field. Contains a two-dimensional array of tile panels.
+ * @author sven
+ *
+ */
 @SuppressWarnings("serial")
 public class GameViewMapPanel extends JPanel implements GameView {
 	
@@ -68,18 +73,32 @@ public class GameViewMapPanel extends JPanel implements GameView {
 				model.addObserver(this);
 				if(model.getMap() != null)model.getMap().addObserver(this);
 			}
+			super.updateUI();
 		}
+		
 		if(model != null && model.getMap() != null)
 		{
+			//Update all tile sizes and locations to the new scaling
 			for(int x=0; x < Ruleset.MAX_TILES_PER_ROW; x++)
-				for(int y=0; y< Ruleset.MAX_TILES_PER_COL; y++)
+				for(int y=0; y< Ruleset.MAX_TILES_PER_COL; y++){
+					tilePanels[x][y].setSize((int)((double)TILE_W * model.getScaling()), (int)((double)TILE_W * model.getScaling()));
+					tilePanels[x][y].setLocation((int)x * tilePanels[x][y].getWidth(), (int)y * tilePanels[x][y].getHeight());
 					tilePanels[x][y].update((Observable)model.getMap().getMap()[x][Ruleset.MAX_TILES_PER_COL - 1 - y], arg);
+				}
 		
 		int activePlayerId = model.getRound()%model.getPlayers().length; 
 		if("placing_card".equalsIgnoreCase(model.getPlayers()[activePlayerId].getState()))
 		if(!(model.getMap().getActiveXPos() == Ruleset.MAX_TILES_PER_ROW/2 && model.getMap().getActiveYPos() == Ruleset.MAX_TILES_PER_COL/2))
 			tilePanels[model.getMap().getActiveXPos()][Ruleset.MAX_TILES_PER_COL - 1 - model.getMap().getActiveYPos()].update((Observable)model.getActiveTile(),this);
 		}
+		
+		//Adjust the width of the map
+		mapWidth = (int)(Ruleset.MAX_TILES_PER_ROW * TILE_W * model.getScaling());
+		mapHeight = (int)(Ruleset.MAX_TILES_PER_COL * TILE_H * model.getScaling());
+		
+		//Adjust the maps size
+		setPreferredSize(new Dimension(mapWidth,mapHeight));
+		
 		refresh();
 	}
 	
@@ -108,8 +127,8 @@ public class GameViewMapPanel extends JPanel implements GameView {
 						
 		
 							int xPos, yPos;
-							xPos = tilePanel.getX() / TILE_W;
-							yPos = tilePanel.getY() / TILE_H;
+							xPos = tilePanel.getX() / tilePanel.getWidth();
+							yPos = tilePanel.getY() / tilePanel.getHeight();
 							System.out.println("Clicked Tile at ("+xPos+","+yPos+")");
 							
 							//if(GameMapValidator.checkFreeCoordinates(model, xPos, yPos))

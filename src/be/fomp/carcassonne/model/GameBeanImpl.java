@@ -10,6 +10,7 @@ public class GameBeanImpl extends Observable implements GameBean {
 	private TileBean activeTile;
 	private PlayerBean[] players;
 	private GameMapBean map;
+	private double scaling;
 	
 	public String getName() {
 		return name;
@@ -46,6 +47,12 @@ public class GameBeanImpl extends Observable implements GameBean {
 	}
 	public void setMap(GameMapBean map) {
 		this.map = map;
+	}
+	public double getScaling() {
+		return scaling;
+	}
+	public void setScaling(double scaling) {
+		this.scaling = scaling;
 	}
 	
 	

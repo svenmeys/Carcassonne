@@ -17,7 +17,9 @@ import be.fomp.carcassonne.model.Player;
 public interface GameController extends Observer {
 
 	void doEditPlayers() throws ActionNotAllowedException;
-
+	//Main events
+	void doChangeScaling(double scale);
+	
 	//PlayerView Events
 	void doAddPlayer() throws ActionNotAllowedException;
 	void doRemovePlayer() throws ActionNotAllowedException;

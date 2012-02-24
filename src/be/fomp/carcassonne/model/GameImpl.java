@@ -17,6 +17,7 @@ public class GameImpl extends Observable implements Game {
 	private GameMap map; //private Map<Integer, Map<Integer, Tile>> gameMap;
 	private GameState state;
 	private int round;
+	private double scale;
 	
 	public GameImpl() {
 		this.state = GameState.INIT;
@@ -98,6 +99,15 @@ public class GameImpl extends Observable implements Game {
 		setChanged();
 	}
 
+	public double getScale() {
+		return scale;
+	}
+	
+	public void setScale(double scale) {
+		this.scale = scale;
+		setChanged();
+	}
+	
 	@Override
 	public GameBean toBean() {
 		GameBean returnValue = new GameBeanImpl();
@@ -112,9 +122,10 @@ public class GameImpl extends Observable implements Game {
 		returnValue.setRound(this.round);
 		returnValue.setState(this.state.toString());
 		returnValue.setPlayers(playerBeans);
+		returnValue.setScaling(scale);
 		return returnValue;
 	}
-
+	
 	@Override
 	public void setValues(GameBean bean) {
 		// TODO Auto-generated method stub

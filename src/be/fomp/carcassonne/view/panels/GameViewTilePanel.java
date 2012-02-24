@@ -18,17 +18,25 @@ import be.fomp.carcassonne.model.TileBeanImpl;
 import be.fomp.carcassonne.utils.Color;
 import be.fomp.carcassonne.view.GameView;
 
+/**
+ * Represents a Tile from the game. In essence a panel with an 
+ * image drawn over it.
+ * @author sven
+ *
+ */
 @SuppressWarnings("serial")
 public class GameViewTilePanel extends JPanel implements GameView {
 	
 	private static Border border = BorderFactory.createLineBorder(java.awt.Color.WHITE, 1);
 	
 	private BufferedImage tileImage;
-	private int scale = 1;
+	private double scale = 1;
+	private double width = TILE_W;
+	private double height = TILE_H;
 	
 	private TileBean model;
 	private GameController controller;
-	
+
 	public GameViewTilePanel(TileBean model, GameController controller) {
 		if(model == null) this.model = new TileBeanImpl();
 		else this.model = model;
@@ -46,14 +54,14 @@ public class GameViewTilePanel extends JPanel implements GameView {
 		}
 	}
 
-	public void setScale(int scale) {
+	public void setScale(double scale) {
 		this.scale = scale;
 	}
 	
 	@Override
 	public void createView() {
 		setLayout(null);
-		setSize(TILE_W * scale, TILE_H * scale);
+		setSize((int)(width * scale), (int)(height * scale));
 		//setBorder(border);
 		setBackground(TILE_BACKGROUND);
 		refresh();
@@ -66,7 +74,6 @@ public class GameViewTilePanel extends JPanel implements GameView {
 				tileImage = TileImageFactory.getTileImage(model.getId());
 		}
 		//else tileImage = TileImageFactory.getTileImage(-1);
-		
 		repaint();
 	}
 
@@ -92,7 +99,7 @@ public class GameViewTilePanel extends JPanel implements GameView {
 	private void drawTile(Graphics g) {
 		Graphics2D g2d = (Graphics2D)g;
 		if(model != null && model.getId() == -1){
-			g.fillRect(0, 0, TILE_W * scale, TILE_H * scale);
+			g.fillRect(0, 0, getWidth(), getHeight());
 			return;
 		}
 		double rotation = model==null?0:Math.toRadians(model.getRotation());
@@ -101,16 +108,16 @@ public class GameViewTilePanel extends JPanel implements GameView {
 
 		if(model != null)
 		switch(model.getRotation()){
-			case 90: 					  ty = TILE_H * scale;break;
-			case 180:tx = TILE_W * scale; ty = TILE_H * scale;break;
-			case 270:tx = TILE_W * scale;					  break;
+			case 90: 			 	  ty = getHeight();break;
+			case 180:tx = getWidth(); ty = getHeight();break;
+			case 270:tx = getWidth();			 	   break;
 		}
 		
 		g2d.translate(tx, ty);
 		g2d.rotate(-rotation); //Rotation of tiles is mapped CCW
 		
 		g2d.drawImage(tileImage, 
-    			0, 0, TILE_W * scale, TILE_H * scale, 
+    			0, 0, getWidth(), getHeight(), 
     			0, 0, tileImage.getWidth(), tileImage.getHeight(),
     			null
 		);

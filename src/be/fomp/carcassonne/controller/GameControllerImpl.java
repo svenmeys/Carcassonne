@@ -43,6 +43,7 @@ public class GameControllerImpl implements GameController{
 	public GameControllerImpl()
 	{
 		model = new GameImpl();
+		model.setScale(1);
 		model.addObserver(this);
 		view = new GameViewImpl(model.toBean(), this);
 		view.createView();
@@ -82,6 +83,15 @@ public class GameControllerImpl implements GameController{
 		player.addObserver(this);
 		
 		model.addPlayer(player);
+		model.notifyObservers();
+	}
+	
+	/* Main panel actions */
+	public void doChangeScaling(double scale)
+	{
+		//TODO add checks
+		if(scale > 0)	model.setScale(scale);
+		
 		model.notifyObservers();
 	}
 	
