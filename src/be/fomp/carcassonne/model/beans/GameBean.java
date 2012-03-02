@@ -1,8 +1,10 @@
 package be.fomp.carcassonne.model.beans;
 
+import java.io.Serializable;
+
 import be.fomp.carcassonne.model.Observable;
 
-public interface GameBean extends Observable {
+public interface GameBean extends Observable, Serializable {
 	
 	String getName();
 	String getState();

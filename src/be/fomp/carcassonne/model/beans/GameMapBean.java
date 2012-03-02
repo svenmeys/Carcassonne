@@ -1,8 +1,10 @@
 package be.fomp.carcassonne.model.beans;
 
+import java.io.Serializable;
+
 import be.fomp.carcassonne.model.Observable;
 
-public interface GameMapBean extends Observable {
+public interface GameMapBean extends Observable, Serializable {
 	TileBean[][] getMap();
 	
 	void setMap(TileBean[][] map);

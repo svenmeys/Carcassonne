@@ -1,8 +1,10 @@
 package be.fomp.carcassonne.model.beans;
 
+import java.io.Serializable;
+
 import be.fomp.carcassonne.model.Observable;
 
-public interface TileBean extends Observable {
+public interface TileBean extends Observable, Serializable {
 
 	Integer getId();
 	Integer getRotation();

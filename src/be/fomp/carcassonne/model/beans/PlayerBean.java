@@ -1,5 +1,7 @@
 package be.fomp.carcassonne.model.beans;
 
+import java.io.Serializable;
+
 import be.fomp.carcassonne.model.Observable;
 import be.fomp.carcassonne.model.Player;
 
@@ -10,7 +12,7 @@ import be.fomp.carcassonne.model.Player;
  * @author sven
  *
  */
-public interface PlayerBean extends Observable{
+public interface PlayerBean extends Observable, Serializable{
 	/**
 	 * @return the name
 	 */

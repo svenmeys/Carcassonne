@@ -88,13 +88,19 @@ public class GameViewMapPanel extends JPanel implements GameView {
 		
 		int activePlayerId = model.getRound()%model.getPlayers().length; 
 		if("placing_card".equalsIgnoreCase(model.getPlayers()[activePlayerId].getState()))
+			
 		if(!(model.getMap().getActiveXPos() == Ruleset.MAX_TILES_PER_ROW/2 && model.getMap().getActiveYPos() == Ruleset.MAX_TILES_PER_COL/2))
 			tilePanels[model.getMap().getActiveXPos()][Ruleset.MAX_TILES_PER_COL - 1 - model.getMap().getActiveYPos()].update((Observable)model.getActiveTile(),this);
 		}
 		
+		double oldH = mapHeight; // for setting a new location
+		
 		//Adjust the width of the map
 		mapWidth = (int)(Ruleset.MAX_TILES_PER_ROW * TILE_W * model.getScaling());
 		mapHeight = (int)(Ruleset.MAX_TILES_PER_COL * TILE_H * model.getScaling());
+		
+		double scalingDiff = (mapHeight / oldH);
+		setLocation((int)((double)getX() * scalingDiff), (int)((double)getY() * scalingDiff));
 		
 		//Adjust the maps size
 		setPreferredSize(new Dimension(mapWidth,mapHeight));

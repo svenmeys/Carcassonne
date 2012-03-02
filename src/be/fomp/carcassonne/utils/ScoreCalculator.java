@@ -13,6 +13,11 @@ import be.fomp.carcassonne.model.Player;
 import be.fomp.carcassonne.model.Tile;
 import be.fomp.carcassonne.model.Zone;
 
+/**
+ * Performs scoring calculations by recursively going over the whole map
+ * @author sven
+ *
+ */
 public final class ScoreCalculator {
 	
 	/**
@@ -101,15 +106,20 @@ public final class ScoreCalculator {
 		calculateEndFieldScore(fields, completedCities);
 	}
 	
+	/**
+	 * A follower was scored so it can be returned to the player
+	 * @param f the follower that was scored
+	 */
 	private static void restoreFollower(Follower f){
 		Player p = f.getOwner();
 		p.setFollowers(p.getFollowers() + 1);
-		//Clean up followers //TODO clean up here or in controller?
+		
+		//Clean up follower from the area
 		f.setOwner(null);
 		f.getLocation().removeFollower();
 		f.setLocation(null);
-		
 	}
+	
 	private static final void calculateCloisterScore(Area cloister){
 		Tile t = cloister.getLocation();
 		if(!TileUtils.isCompletelySurrounded(t)) return;

@@ -110,6 +110,8 @@ public class GameViewImpl extends JFrame implements GameView, ActionListener, Ch
 		gameMapPanel.update(o, arg);
 		scorePanel.update(o, arg);
 		controlPanel.update(o,arg);
+		
+		setTitle("Carcassonne: GameState = " + model.getState() + " Round = " + model.getRound());
 	}
 
 	@Override

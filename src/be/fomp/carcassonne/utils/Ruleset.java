@@ -4,6 +4,11 @@ import java.util.Comparator;
 
 import be.fomp.carcassonne.model.Player;
 
+/**
+ * Contains the main rules of the game
+ * @author sven
+ *
+ */
 public final class Ruleset {
 	//TODO create rulesets for other editions: http://jhywu.tripod.com/CarcRuleV2.htm
 	
@@ -33,8 +38,8 @@ public final class Ruleset {
 	
 	public static final int getCloisterScore() {return 9;}
 	public static final int getEndCloisterScore(int surroundingTiles) {return surroundingTiles + 1;}
-	public static final int getRoadScore(int tiles) {return 1 * tiles; }
-	public static final int getEndRoadScore(int tiles) {return 1 * tiles; }
+	public static final int getRoadScore(int numTiles) {return 1 * numTiles; }
+	public static final int getEndRoadScore(int numTiles) {return 1 * numTiles; }
 	
 	public static final int getEndFarmerScore(int completeCities) {return 4 * completeCities; }
 	private Ruleset(){}
