@@ -13,8 +13,8 @@ import javax.swing.border.Border;
 
 import be.fomp.carcassonne.controller.GameController;
 import be.fomp.carcassonne.game.objects.TileImageFactory;
-import be.fomp.carcassonne.model.TileBean;
-import be.fomp.carcassonne.model.TileBeanImpl;
+import be.fomp.carcassonne.model.beans.TileBean;
+import be.fomp.carcassonne.model.beans.TileBeanImpl;
 import be.fomp.carcassonne.utils.Color;
 import be.fomp.carcassonne.view.GameView;
 

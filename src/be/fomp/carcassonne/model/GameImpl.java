@@ -6,6 +6,9 @@ import java.util.Observable;
 import java.util.Observer;
 
 import be.fomp.carcassonne.game.objects.TileDeck;
+import be.fomp.carcassonne.model.beans.GameBean;
+import be.fomp.carcassonne.model.beans.GameBeanImpl;
+import be.fomp.carcassonne.model.beans.PlayerBean;
 import be.fomp.carcassonne.utils.GameState;
 
 public class GameImpl extends Observable implements Game {

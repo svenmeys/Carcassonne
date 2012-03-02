@@ -3,7 +3,7 @@ package be.fomp.carcassonne.controller;
 import java.util.Observer;
 
 import be.fomp.carcassonne.exceptions.ActionNotAllowedException;
-import be.fomp.carcassonne.model.PlayerBean;
+import be.fomp.carcassonne.model.beans.PlayerBean;
 
 
 /**

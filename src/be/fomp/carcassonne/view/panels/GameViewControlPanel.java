@@ -15,8 +15,8 @@ import javax.swing.JTextField;
 import be.fomp.carcassonne.controller.GameController;
 import be.fomp.carcassonne.exceptions.ActionNotAllowedException;
 import be.fomp.carcassonne.exceptions.TileFactoryException;
-import be.fomp.carcassonne.model.GameBean;
-import be.fomp.carcassonne.model.TileBean;
+import be.fomp.carcassonne.model.beans.GameBean;
+import be.fomp.carcassonne.model.beans.TileBean;
 import be.fomp.carcassonne.utils.TileUtils;
 import be.fomp.carcassonne.view.GameView;
 

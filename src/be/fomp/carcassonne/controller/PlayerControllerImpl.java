@@ -4,7 +4,7 @@ import java.util.Observable;
 
 import be.fomp.carcassonne.exceptions.ActionNotAllowedException;
 import be.fomp.carcassonne.model.Player;
-import be.fomp.carcassonne.model.PlayerBean;
+import be.fomp.carcassonne.model.beans.PlayerBean;
 import be.fomp.carcassonne.view.PlayerView;
 import be.fomp.carcassonne.view.PlayerViewImpl;
 

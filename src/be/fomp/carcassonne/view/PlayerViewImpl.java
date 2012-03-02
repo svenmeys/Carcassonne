@@ -18,7 +18,7 @@ import javax.swing.SwingConstants;
 import be.fomp.carcassonne.controller.PlayerController;
 import be.fomp.carcassonne.exceptions.ActionNotAllowedException;
 import be.fomp.carcassonne.exceptions.InvalidPlayerException;
-import be.fomp.carcassonne.model.PlayerBean;
+import be.fomp.carcassonne.model.beans.PlayerBean;
 import be.fomp.carcassonne.validator.PlayerValidator;
 
 @SuppressWarnings("serial")

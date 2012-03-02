@@ -29,8 +29,8 @@ public class Carcassonne {
 		player2.setColor(Color.RED);
 		
 		try{
-			carcassonneGame.addPlayer(player1);
-			carcassonneGame.addPlayer(player2);
+			carcassonneGame.doAddPlayer(player1);
+			carcassonneGame.doAddPlayer(player2);
 		} catch (GameException e){System.out.println("error: " + e.getMessage());}
 		
 	}

@@ -1,4 +1,7 @@
-package be.fomp.carcassonne.model;
+package be.fomp.carcassonne.model.beans;
+
+import be.fomp.carcassonne.model.Observable;
+import be.fomp.carcassonne.model.Player;
 
 /**
  * A bean model for the {@link Player} class. 

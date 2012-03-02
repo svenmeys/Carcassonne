@@ -1,5 +1,7 @@
 package be.fomp.carcassonne.model;
 
+import be.fomp.carcassonne.model.beans.GameMapBean;
+
 
 public interface GameMap extends Observable, Beanable<GameMapBean> {
 	

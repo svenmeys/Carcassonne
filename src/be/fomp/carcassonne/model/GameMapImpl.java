@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Observable;
 
+import be.fomp.carcassonne.model.beans.GameMapBean;
+import be.fomp.carcassonne.model.beans.GameMapBeanImpl;
+import be.fomp.carcassonne.model.beans.TileBean;
 import be.fomp.carcassonne.utils.Ruleset;
 
 public class GameMapImpl extends Observable implements GameMap{

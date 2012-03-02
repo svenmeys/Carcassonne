@@ -7,6 +7,12 @@ import java.util.Map;
 
 import javax.imageio.ImageIO;
 
+/**
+ * Fetches images for the different tiles and caches them in memory so there
+ * are less disk reads necessary.
+ * @author sven
+ *
+ */
 public final class TileImageFactory {
 	private static TileImageFactory instance = new TileImageFactory();
 	
@@ -19,6 +25,11 @@ public final class TileImageFactory {
 		return instance.getImage((Integer)id);
 	}
 	
+	/**
+	 * Fetches an image from the disk or cache
+	 * @param id The image id as specified in xml config
+	 * @return the image
+	 */
 	private BufferedImage getImage(Integer id){
 		if(imageCache.get(id) == null)
 			try {                

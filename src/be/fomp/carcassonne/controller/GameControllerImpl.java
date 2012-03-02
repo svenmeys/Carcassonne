@@ -74,7 +74,7 @@ public class GameControllerImpl implements GameController{
 		view.update((Observable)model.toBean(), arg);
 	}
 	
-	public void addPlayer(Player player) throws ActionNotAllowedException {
+	public void doAddPlayer(Player player) throws ActionNotAllowedException {
 		//check game state
 		
 		if(model.getPlayers().size() >= Ruleset.MAX_PLAYERS)
@@ -133,25 +133,34 @@ public class GameControllerImpl implements GameController{
 	
 	/* Player actions */
 	
-	public void doEditPlayers() throws ActionNotAllowedException {
+	public void doEditPlayers () throws ActionNotAllowedException {
 		//TODO check gameState
 		
-		//TODO check if model has players in it
+		// If there are no players, one is automatically created
 		if(model.getPlayers().isEmpty()) {
-			addPlayer(new PlayerImpl());
+			doAddPlayer(new PlayerImpl());
 			model.notifyObservers();
 		}
-		playerModel		 = model.getPlayers().get(0);
+		playerModel	= model.getPlayers().get(0);
 		playerModel.addObserver(this);
-		if(playerController == null)
+		
+		//TODO Instead of using a separate controller, use the same one
+		if (playerController == null) {
 			playerController = new PlayerControllerImpl(playerModel, this);
-		else 
+		} else { 
 			playerController.update((Observable)playerModel, 0);
+		}
 		playerController.doShowView();
 	}
 	
 	public void doAddPlayer() throws ActionNotAllowedException {
-		addPlayer(new PlayerImpl());
+		if(model.getPlayers().size() >= Ruleset.MAX_PLAYERS) {
+			throw new ActionNotAllowedException("Player limit reached");
+		}
+		if(model.getState() == GameState.RUNNING) {
+			throw new ActionNotAllowedException("Can not add players while the game is in progress");
+		}
+		doAddPlayer(new PlayerImpl());
 		playerController.doShowView();
 	}
 	

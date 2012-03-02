@@ -1,4 +1,4 @@
-package be.fomp.carcassonne.model;
+package be.fomp.carcassonne.model.beans;
 
 import java.util.Observable;
 

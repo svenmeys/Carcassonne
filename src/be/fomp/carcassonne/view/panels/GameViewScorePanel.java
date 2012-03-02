@@ -12,8 +12,8 @@ import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
 import be.fomp.carcassonne.controller.GameController;
-import be.fomp.carcassonne.model.GameBean;
-import be.fomp.carcassonne.model.PlayerBean;
+import be.fomp.carcassonne.model.beans.GameBean;
+import be.fomp.carcassonne.model.beans.PlayerBean;
 import be.fomp.carcassonne.utils.Color;
 import be.fomp.carcassonne.utils.Ruleset;
 import be.fomp.carcassonne.view.GameView;

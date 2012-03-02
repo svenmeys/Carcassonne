@@ -3,6 +3,7 @@ package be.fomp.carcassonne.model;
 import java.util.List;
 
 import be.fomp.carcassonne.game.objects.TileDeck;
+import be.fomp.carcassonne.model.beans.GameBean;
 import be.fomp.carcassonne.utils.GameState;
 
 /**

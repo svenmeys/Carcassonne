@@ -5,6 +5,9 @@ import java.util.Observable;
 import java.util.Observer;
 import java.util.Set;
 
+import be.fomp.carcassonne.model.beans.TileBean;
+import be.fomp.carcassonne.model.beans.TileBeanImpl;
+
 public class TileImpl extends Observable implements Tile {
 	private final int id;
 	private int followerLocation;

@@ -1,7 +1,7 @@
 package be.fomp.carcassonne.validator;
 
 import be.fomp.carcassonne.exceptions.InvalidPlayerException;
-import be.fomp.carcassonne.model.PlayerBean;
+import be.fomp.carcassonne.model.beans.PlayerBean;
 import be.fomp.carcassonne.utils.Color;
 
 /**

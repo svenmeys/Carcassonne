@@ -2,6 +2,8 @@ package be.fomp.carcassonne.model;
 
 import java.util.Observable;
 
+import be.fomp.carcassonne.model.beans.PlayerBean;
+import be.fomp.carcassonne.model.beans.PlayerBeanImpl;
 import be.fomp.carcassonne.utils.Color;
 import be.fomp.carcassonne.utils.PlayerState;
 

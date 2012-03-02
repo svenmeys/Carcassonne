@@ -14,7 +14,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import be.fomp.carcassonne.controller.GameController;
-import be.fomp.carcassonne.model.GameBean;
+import be.fomp.carcassonne.model.beans.GameBean;
 import be.fomp.carcassonne.view.panels.GameViewControlPanel;
 import be.fomp.carcassonne.view.panels.GameViewMapPanel;
 import be.fomp.carcassonne.view.panels.GameViewMenuBar;

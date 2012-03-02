@@ -1,5 +1,6 @@
 package be.fomp.carcassonne.model;
 
+import be.fomp.carcassonne.model.beans.PlayerBean;
 import be.fomp.carcassonne.utils.Color;
 import be.fomp.carcassonne.utils.PlayerState;
 

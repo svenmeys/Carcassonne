@@ -2,6 +2,8 @@ package be.fomp.carcassonne.model;
 
 import java.util.Set;
 
+import be.fomp.carcassonne.model.beans.TileBean;
+
 /**
  * Border locations
  * 

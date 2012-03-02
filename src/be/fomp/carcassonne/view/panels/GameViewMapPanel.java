@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 
 import be.fomp.carcassonne.controller.GameController;
 import be.fomp.carcassonne.exceptions.ActionNotAllowedException;
-import be.fomp.carcassonne.model.GameBean;
+import be.fomp.carcassonne.model.beans.GameBean;
 import be.fomp.carcassonne.utils.Ruleset;
 import be.fomp.carcassonne.view.GameView;
 

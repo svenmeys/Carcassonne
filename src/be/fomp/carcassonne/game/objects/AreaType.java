@@ -1,5 +1,10 @@
 package be.fomp.carcassonne.game.objects;
 
+/**
+ * Represents the different types of areas that a tile can have.
+ * @author sven
+ *
+ */
 public enum AreaType {
 	NONE,
 	UNKNOWN,
